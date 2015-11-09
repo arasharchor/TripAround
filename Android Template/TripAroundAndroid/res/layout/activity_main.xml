@@ -16,25 +16,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="@color/Green"
         android:text="@string/make_trip_button_label" />
-
-    <Button
-        android:id="@+id/savetripbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/maketripbutton"
-        android:layout_alignRight="@+id/maketripbutton"
-        android:layout_alignStart="@+id/maketripbutton"
-        android:layout_alignEnd="@+id/maketripbutton"
-        android:layout_below="@+id/maketripbutton"
-        android:textStyle="bold"
-        android:layout_marginTop="91dp"
-        android:textSize="30sp"
-        android:textColor="@color/Blue"
-        android:background="@android:color/holo_orange_light"
-        android:text="@string/save_trip_button_label" />
 
     <TextView
         android:id="@+id/textView1"
@@ -46,5 +30,21 @@
         android:layout_marginTop="23dp"
         android:textSize="24sp"
         android:text="@string/welcome_text" />
+
+    <Button
+        android:id="@+id/savetripbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/maketripbutton"
+        android:layout_alignRight="@+id/maketripbutton"
+        android:layout_alignLeft="@+id/maketripbutton"
+        android:layout_alignStart="@+id/maketripbutton"
+        android:layout_below="@+id/maketripbutton"
+        android:layout_marginTop="80dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="@string/save_trip_button_label"
+        android:textColor="@color/Blue"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
