@@ -1,0 +1,19 @@
+﻿.sm_loader.sm_light {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../assets/light/other/spinner.gif);
+    background-color: #FFFFFF;
+}
+
+.sm_loader.sm_dark {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #4d4d4d;
+    background-image: url(../assets/dark/other/spinner.gif);
+}

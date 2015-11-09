@@ -1,0 +1,657 @@
+
+
+(function () {
+    var protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    var stableVersion = '1.507';
+    var async = "" == "false" ? false : false; /*true;*/
+    var version = "" != "" ? "" : stableVersion;
+    var baseLoc = protocol + "www.scribblemaps.com/api/js/"+version+"/";
+    var sanitizer = baseLoc + "scripts/sanitizer.js";
+    var lurl = protocol + "www.scribblemaps.com/";
+    var coresm = baseLoc + "scripts/main.js";
+
+    var registerClass = function (name, object, notGlobal) {
+        if (!window["scribblemaps"]) {
+            window["scribblemaps"] = {};
+        }
+
+        window["scribblemaps"][name] = object;
+
+        if(!notGlobal) {
+            if (!window[name] && window[name] != object) {
+                window[name] = object;
+            } else if (window[name] != object) {
+                console.log("Could not register global variable " + name + " variable available using scribblemaps." + name);
+            }
+        }
+    };
+
+/* Types */
+    var smc = {};
+    smc["SEARCH"] = "0";
+    smc["ZOOM"] = "1";
+    smc["TOOLBOX"] = "2";
+    smc["LINE_SETTINGS"] = "3";
+    smc["LINE_COLOR"] = "4";
+    smc["FILL_COLOR"] = "5";
+    smc["MAP_TYPE"] = "6";
+    smc["LEGEND"] = "7";
+    smc["LAYERS"] = "undefined";
+    smc["OVERLAY_LIST"] = "8";
+    registerClass("ControlType", smc, true);
+    var tt = {};
+    tt["NONE"] = "none";
+    tt["MENU"] = "menu";
+    tt["DRAG"] = "drag";
+    tt["DRAW"] = "scribble";
+    tt["LINE"] = "line";
+    tt["FLIGHT_LINE"] = "flightLine";
+    tt["EDIT"] = "edit";
+    tt["LABEL"] = "label";
+    tt["POLYGON"] = "polygon";
+    tt["MARKER"] = "marker";
+    tt["SINGLE_MARKER"] = "singleMarker";
+    tt["ERASER"] = "eraser";
+    tt["CIRCLE"] = "circle";
+    tt["RECTANGLE"] = "rectangle";
+    tt["FILL"] = "fill";
+    tt["SELECT"] = "select";
+    tt["IMAGE"] = "image";
+    tt["CONNECTED_LINE"] = "connectedLine";
+    tt["ROUTE"] = "route";
+    registerClass("ToolType", tt, true);
+    var ot = {};
+    ot["LINE"] = "1";
+    ot["RECT"] = "2";
+    ot["CIRCLE"] = "3";
+    ot["POLYGON"] = "4";
+    ot["LABEL"] = "5";
+    ot["MARKER"] = "6";
+    ot["IMAGE"] = "7";
+    ot["FLIGHT_LINE"] = "16";
+    ot["INFO_BUBBLE"] = "17";
+    ot["MEDIA_MARKER"] = "18";
+    ot["POINT"] = "19";
+    registerClass("OverlayType", ot, true);
+    var pt = {};
+    pt["MARKER"] = "1";
+    pt["TEXT_EDITOR"] = "2";
+    pt["LOAD_MAP"] = "4";
+    pt["SAVE_MAP"] = "5";
+    pt["WIDGET"] = "6";
+    pt["MAP_INFO"] = "7";
+    pt["MENU"] = "8";
+    pt["SEND_TO_FRIEND"] = "10";
+    pt["SAVE_IMAGE"] = "9";
+    pt["SETTINGS"] = "3";
+    registerClass("PanelType", pt, true);
+    var mt = {};
+    mt["NEW_MAP"] = "newMap";
+    mt["LOAD_MAP"] = "loadMap";
+    mt["SAVE_MAP"] = "saveMap";
+    mt["WIDGET"] = "getWidget";
+    mt["SEND_TO_FRIEND"] = "sendToFriend";
+    mt["SAVE_IMAGE"] = "saveImage";
+    mt["SAVE_PDF"] = "savePDF";
+    mt["FACEBOOK"] = "facebook";
+    mt["KML_DOWNLOAD"] = "saveKML";
+    mt["GPX_DOWNLOAD"] = "saveGPX";
+    mt["GOOGLE"] = "googleMaps";
+    registerClass("MenuType", mt, true);
+    var ut = {};
+    ut["MILLIMETRE"] = "mm";
+    ut["CENTIMETRE"] = "cm";
+    ut["METRE"] = "m";
+    ut["KILOMETRE"] = "km";
+    ut["INCH"] = "mm";
+    ut["FOOT"] = "ft";
+    ut["YARD"] = "yd";
+    ut["MILE"] = "mi";
+    ut["NAUTICAL_MILE"] = "nmi";
+    ut["SQUARE_CENTIMETRE"] = "sqcm";
+    ut["SQUARE_METRE"] = "sqm";
+    ut["SQUARE_KILOMETRE"] = "sqkm";
+    ut["HECTARE"] = "ha";
+    ut["SQUARE_INCH"] = "sqin";
+    ut["SQUARE_FOOT"] = "sqft";
+    ut["SQUARE_YARD"] = "sqyd";
+    ut["SQUARE_MILE"] = "sqmi";
+    ut["ACRE"] = "acre";
+    registerClass("MeasureType", ut, true);
+    var view = {};
+    view["ZOOM_START"] = "zoom_start";
+    view["ZOOM_END"] = "zoom_end";
+    view["CHANGED"] = "view_changed";
+    view["TILES_LOADED"] = "tiles_loaded";
+    view["MOVED"] = "view_moved";
+    view["RENDERED"] = "view_rendered";
+    registerClass("ViewEvent", view, true);
+    var sme = {};
+    sme["NEW_MAP"] = "new_map";
+    sme["MAP_SAVE_ERROR"] = "save_error";
+    sme["MAP_SAVE_START"] = "save_start";
+    sme["MAP_SAVED"] = "save_complete";
+    sme["MAP_LOADED"] = "map_loaded";
+    sme["MAP_LOAD_ERROR"] = "map_load_error";
+    sme["MAP_PASSWORD_ERROR"] = "map_password_error";
+    sme["SMJSON_ERROR"] = "smjson_error";
+    sme["BASE_TYPE_CHANGED"] = "basetype_changed";
+    sme["OVERLAY_ADDED"] = "overlay_added";
+    sme["OVERLAY_REMOVED"] = "overlay_removed";
+    sme["OVERLAY_CHANGED"] = "overlay_changed";
+    sme["OVERLAY_META_CHANGED"] = "overlay_meta_changed";
+    sme["OVERLAY_OVER"] = "overlay_over";
+    sme["OVERLAY_OUT"] = "overlay_out";
+    sme["OVERLAY_CLICK"] = "overlay_click";
+    sme["OVERLAY_MOVE"] = "overlay_move";
+    sme["OVERLAY_UP"] = "overlay_up";
+    sme["OVERLAY_DOWN"] = "overlay_down";
+    registerClass("MapEvent", sme, true);
+    var draw = {};
+    draw["STYLE_CHANGED"] = "style_changed";
+    draw["MARKER_CHANGED"] = "marker_changed";
+    registerClass("DrawEvent", draw, true);
+    var ui = {};
+    ui["VIEWLOADER_OPEN"] = "viewloader_open";
+    ui["VIEWLOADER_CLOSE"] = "viewloader_close";
+    ui["ALERT_CLOSE"] = "alert_close";
+    ui["ALERT_OPEN"] = "alert_open";
+    ui["PANEL_CLOSE"] = "panel_close";
+    ui["PANEL_OPEN"] = "panel_open";
+    ui["PANEL_MARKER_SELECT"] = "marker_select";
+    registerClass("UIEvent", ui, true);
+    var core = {};
+    core["ALL_READY"] = "ready";
+    registerClass("CoreEvent", core, true);
+    registerClass("CapType", { "SQUARE": 1, "ROUND": 0 }, true);
+    registerClass("JoinType", { "MITER": 1, "ROUND": 0 }, true);
+    registerClass("LineType", { "SOLID": 0, "DASHED": 1, "ARROW": 2, "ARROW_ONLY": 3 }, true);
+
+
+    function loadCss(src, finish) {
+        var fileref = document.createElement("link");
+
+        fileref.onload = function() {
+            CSSLoaded = true;
+            if (finish) finish();
+        };
+
+        fileref.setAttribute("rel", "stylesheet");
+        fileref.setAttribute("type", "text/css");
+        fileref.setAttribute("href", src);
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+    }
+
+    function loadScript(src, finish) {
+        var scr = document.createElement("script");
+        scr.type = 'text/javascript';
+        scr.async = true;
+        var head = document.getElementsByTagName("head")[0] || document.documentElement;
+
+        scr.onload = scr.onreadystatechange = function () {
+            if ((!this.readyState ||
+                    this.readyState === "loaded" || this.readyState === "complete")) {
+
+                if (finish) finish();
+
+                scr.onload = scr.onreadystatechange = null;
+                if (head && scr.parentNode) {
+                    head.removeChild(scr);
+                }
+            }
+        };
+
+
+        scr.src = src;
+
+        var attachTo = document.getElementsByTagName('head')[0]
+                       || document.getElementsByTagName('body')[0];
+
+        attachTo.appendChild(scr);
+    }
+
+    function writeCss(href) {
+        document.write('<' + 'link rel="stylesheet" type="text/css" href="' + href + '"' + '>');
+    }
+
+    function writeScript(src, at, follow, async) {
+        if(!async) {
+            if (!at) {
+                document.write('<' + 'script src="' + src + '"' +
+                       ' type="text/javascript"><' + '/script>');
+            } else {
+                document.write('<' + 'script src="' + src + '"' +
+                       ' type="text/javascript" ' + at + '><' + '/script>');
+            }
+
+            if (follow) {
+                document.write(follow);
+            }
+        } else if(async && (document.readyState === "complete" || document.readyState === "interactive")) {
+               var s = document.createElement('script');
+               s.src = src;
+			   s.async = true;
+           
+         	var attachTo = 
+					document.body
+					|| document.getElementsByTagName('body')[0]
+                    || document.getElementsByTagName('head')[0];
+
+          attachTo.appendChild(s);
+		  
+        } else if(async) {
+             setTimeout(function() {
+                writeScript(src, at, follow, async);
+            }, 10);
+        }
+    }
+
+    var googleReady = false;
+    var SMLoaded = false;
+    var domReady = false;
+    var CSSLoaded = false;
+    var bapiTO = -1;
+
+    function overrideIsGoogle() {
+        if(window.sm_overrides 
+           && window.sm_overrides.baseAPI 
+           && window.sm_overrides.baseAPI.indexOf("google") == -1) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function baseApiLoaded() {
+        if((!bapi || bapi == "" || bapi == "google" || bapi == "googleEnterprise" || bapi == "googleKey")
+            && overrideIsGoogle()) {
+            if((googleReady || !async) || (window.sm_overrides && window.sm_overrides.baseAPI && typeof google === 'object' && typeof google.maps === 'object')) {
+                return true;
+            } else {
+                clearTimeout(bapiTO);
+                bapiTO = setTimeout(function() {
+                    tryMakeReal();
+                }, 250);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function tryMakeReal() {
+        if (SMLoaded && domReady && CSSLoaded && baseApiLoaded()) {
+            clearTimeout(bapiTO);
+            makeReal();
+        }
+    }
+
+    /* place holder code */
+    var makeReal = function () {
+        for (var i = 0; i < smPlaceHolders.length; i++) {
+            smPlaceHolders[i].makeReal();
+        }
+
+        smPlaceHolders = [];
+        logForReady = [];
+    }
+
+    var createLoaders = function () {
+        for (var i = 0; i < smPlaceHolders.length; i++) {
+            smPlaceHolders[i].createLoader();
+        }
+    }
+
+    var rsc = document.onreadystatechange;
+    document.onreadystatechange = function (e) {
+        if (document.readyState === 'complete') {
+            domReady = true;
+
+            createLoaders();
+            tryMakeReal();
+        }
+
+        if(rsc) rsc();
+    };
+
+    var logForReady = [];
+    var createPlaceHolder = function (group, fname, sm) {
+        var f = function () {
+            logForReady.push({ group: group, fname: fname, args: arguments, sm: sm });
+            return sm;
+        }
+
+        return f;
+    }
+
+    var placeHolders = {
+        'clustering': ['setSize', 'setRangePixels', 'enable', 'disable', 'clusterViewOverride'],
+        'data': ['addListener','removeListener', 'getSMJSON'],
+        'view': ['addListener', 'removeListener', 'pixelToLatLng', 'latLngToPixel', 'getZoom'
+                ,'setZoom', 'lockView', 'unlockView', 'lockToBounds', 'render', 'getBounds',
+                 'setBounds', 'getCenter', 'setCenter', 'fitContent'],
+        'draw': ['setStyle', 'rectangle', 'circle', 'polygon', 'line', 'infoBubble',
+                 'label', 'mediaMarker', 'marker', 'point', 'image'],
+        'map': ['setType', 'openInfoWindow', 'closeInfoWindow', 'getOverlays', 'addOverlay', 'removeOverlay',
+                'wipe', 'import', 'importById', 'load', 'loadById', 'save', 'startAutoSave', 'stopAutoSave', 'getMapType',
+                'saveCurrent','loadSMJSON','importSMJSON', 'addListener', 'removeListener', "createNewMap"],
+        'layers': ['setBase', 'createLayer', 'add', 'remove', 'addAt', 'removeAt', 'clear'],
+        'utils': ['unitTypes', 'convertUnit'],
+        'ui': ['getCurrentTool', 'showCrosshairs', 'hideCrosshairs','setMapTypes', 'editMarker', 'addListener', 'removeListener',
+            'showLoader', 'hideLoader', 'showAlert', 'hideAlert', 'closeGallery', 'setAvailableTools', 'setMenuIcons',
+            'getSearchControls', 'setTool', 'createTool', 'styleControl', 'createLegend', 'removeLegend', 'setMarkerLibrary',
+            'setTheme', 'showMenu', 'showMenuIcon', 'addDomElement', 'hidePanel', 'showColorPicker', 'showCustomPanel', 'setSearchRegion', 'setSearchBounds'],
+        'settings': ['disableDevCatch', 'clearListeners', 'setToImperial', 'noPasswordSkip', 'updateCredentials', 'disableChangesHalt', 'enableChangesHalt',
+                     'setToMetric', 'setFrameRate', 'toggleFullScreen', 'disableZoom', 'enableZoom', 'disableLineSnap',
+                     'enableLineSnap', 'resize', 'setMeasurementUnits', 'getMeasurementUnits'],
+        'addListener': [],
+        'removeListener': [],
+        'getBaseAPIMap': []
+    }
+
+    var smPlaceHolders = [];
+    var executeLoadedCalls = function (sm) {
+        for (var i = 0; i < logForReady.length; i++) {
+            if (logForReady[i].sm === sm) {
+                if (logForReady[i].fname) {
+                    sm[logForReady[i].group][logForReady[i].fname].apply(sm[logForReady[i].group], logForReady[i].args);
+                } else {
+                    sm[logForReady[i].group].apply(sm[logForReady[i].group], logForReady[i].args);
+                }
+            }
+        }
+    }
+
+    var ScribbleMap = function(el, opts) {
+        this.createLoader = function() {
+            var ldr = document.createElement("div");
+
+            if (settings["theme"] == "dark") {
+                ldr.className = "sm_loader sm_dark";
+            } else {
+                ldr.className = "sm_loader sm_light";
+            }
+            if (Object.prototype.toString.call(el) == '[object String]') {
+                document.getElementById(el).appendChild(ldr);
+
+            } else if (el instanceof Array) {
+                el[0].appendChild(ldr);
+            } else {
+                el.appendChild(ldr);
+            }
+        }
+
+        this.makeReal = function() {
+            var sm = new window["ScribbleMapCore"](el, opts);
+
+            for (var s in sm) {
+                this[s] = sm[s];
+            }
+
+            executeLoadedCalls(this);
+
+            delete this.makeReal;
+            delete this.createLoader;
+        }
+        for (var s in placeHolders) {
+            this[s] = {};
+            for (var i = 0; i < placeHolders[s].length; i++) {
+                this[s][placeHolders[s][i]] = createPlaceHolder(s, placeHolders[s][i], this);
+            }
+
+            if (placeHolders[s].length == 0) {
+                this[s] = createPlaceHolder(s, null, this);
+            }
+        }
+
+        if (domReady && SMLoaded) {
+            this.makeReal();
+        } else {
+            smPlaceHolders.push(this);
+        }
+    };
+
+    registerClass('ScribbleMap', ScribbleMap, true);
+
+    if(!window['ScribbleMap']) {
+        window['ScribbleMap'] = ScribbleMap;
+    }
+
+    /* end placeholder code */
+
+    var s = document.getElementsByTagName('script');
+    var loaderScript;
+
+     var settings = {"baseAPI": "google"};
+    if (window["scribblemaps"] && window["scribblemaps"]["settings"]) {
+        var smsettings = window["scribblemaps"]["settings"];
+        for (var s in smsettings) {
+            settings[s] = smsettings[s];
+        }
+    } else {
+        for (var i = 0; i < s.length; i++) {
+            if (s[i].innerHTML.toString().indexOf("{") != -1
+                && s[i].src.indexOf("scribblemaps.com") != -1) {
+                loaderScript = s[i];
+                if (s[i].innerHTML && s[i].innerHTML != null) {
+                    try {
+                        var o = eval('(' + s[i].innerHTML + ')');
+                        settings = o;
+                        window.scribblemaps.settings = o;
+                        break;
+                    } catch(e) {
+                    }
+                }
+            }
+        }
+
+
+        registerClass("settings", settings);
+    }
+
+  function getProjectId() {
+        var pId = "";
+        if(pId != "" && pid != "null") {
+            return pId;
+        }
+
+        if (settings["projectId"]) {
+            return settings["projectId"];
+        } else if(loaderScript) {
+            var match = loaderScript.src.match(/pId=([0-9a-zA-Z-]+)/);
+            if (match && match[1]) {
+                return match[1];
+            }
+        };
+
+        return null;
+    }
+ 
+
+    var googleCallback = "smGoogleCallback"+new Date().getTime();
+    window[googleCallback] = function() {
+        googleReady = true;
+        tryMakeReal();
+    };
+
+    var getGoogleCallback = function() {
+        if(!async) {
+            return "";
+        } else {
+            return "&callback="+googleCallback;
+        }
+    }
+
+    var apis = {};
+    apis["bing"] = {
+        scripts: ["//ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"]
+    };
+    apis["nokia"] = {
+        scripts: ["//js.api.here.com/se/2.5.3/jsl.js"]
+    };
+    apis["leaflet"] = {
+        scripts: ["//cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"],
+        css: ["//cdn.leafletjs.com/leaflet-0.6.4/leaflet.css"]
+    };
+    apis["mapquest"] = {
+        scripts: ["//cdn.leafletjs.com/leaflet-0.6.4/leaflet.js",
+                  "//www.mapquestapi.com/sdk/leaflet/v1.0/mq-map.js?key={key}"],
+        css: ["//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"]
+    };
+    apis["google"] = {
+        scripts: ["//maps.googleapis.com/maps/api/js?sensor={sensor}"+getGoogleCallback()],
+        async: async
+    };
+    apis["googleKey"] = {
+        scripts: ["//maps.googleapis.com/maps/api/js?sensor={sensor}&key={key}"+getGoogleCallback()],
+        async: async
+    };
+    apis["googleEnterprise"] = {
+        scripts: ["//maps.googleapis.com/maps/api/js?sensor={sensor}&client={clientId}"+getGoogleCallback()],
+        async: async
+    }
+    apis["arcgis"] = {
+        scripts: ["//serverapi.arcgisonline.com/jsapi/arcgis/3.4/"],
+        css: ["//serverapi.arcgisonline.com/jsapi/arcgis/3.4/js/esri/css/esri.css"]
+    };
+
+    settings["baseLoc"] = baseLoc;
+    var bapi = settings["baseAPI"];
+
+     var pid = getProjectId();
+     if(pid && pid != "" && pid != "null") {
+        settings["projectId"] = pid;
+     }
+
+    var providers = ["google", "googleEnterprise", "bing", "nokia", "arcgis", "mapquest"];
+
+    if (!bapi || bapi == "") {
+        if (settings["clientId"]) {
+            bapi = "googleEnterprise";
+        } else {
+            bapi = "google";
+        }
+    } else if (bapi == "google" && settings["clientId"]) {
+        bapi = "googleEnterprise"
+    } else if (bapi == "google" && settings["key"]) {
+        bapi = "googleKey";
+    }
+
+    if (pid && pid != "" && pid != "null") {
+        window["$SMLicense"] = function (data) {
+            if (data) {
+                bapi = providers[data.providerId - 1];
+                settings["license"] = data;
+                settings["baseAPI"] = bapi;
+                settings["key"] = data.apiKey;
+                settings["clientId"] = data.apiKey;
+                settings["appID"] = data.otherKey;
+            } else {
+                settings["projectId"] = null;
+            }
+
+            window.scribblemaps["settings"] = settings;
+            
+            s = document.getElementsByTagName('script');
+            for (var i = 0; i < s.length; i++) {
+                if (s[i].src.indexOf(lurl) != -1) {
+                    s[i].parentNode.removeChild(s[i]);
+                    break;
+                }
+            }
+
+            window["$SMLicense"] = undefined;
+            startLoading();
+        };
+
+        var license = lurl + "api/projects/" + getProjectId() + "/license?callback=$SMLicense&v=" + new Date().toString();
+        writeScript(license);
+    } else {
+        startLoading();
+    }
+
+    function loadCore() {
+        if (settings["theme"] == "dark") {
+            loadCss(baseLoc + "css/scribblemaps_dark.css", function () {
+                tryMakeReal();
+            });
+        } else if(settings["theme"] == "light") {
+            loadCss(baseLoc + "css/scribblemaps_light.css", function () {
+                tryMakeReal();
+            });
+        } else {
+         loadCss(baseLoc + "css/scribblemaps_modern.css", function () {
+                tryMakeReal();
+            });
+        }
+
+        loadScript(sanitizer);
+        loadScript(coresm, function () {
+            SMLoaded = true;
+            tryMakeReal();
+        });
+    }
+
+    function startLoading() {
+        var sensor = settings["sensor"] ? "true" : "false";
+        var key = settings["key"];
+        var clientId = settings["clientId"];
+
+        if (apis[bapi].css) {
+            for (var i = 0; i < apis[bapi].css.length; i++) {
+                writeCss(apis[bapi].css[i]);
+            }
+        }
+
+        if(window.sm_overrides && window.sm_overrides.baseAPI) {
+             writeScript(window.sm_overrides.baseAPI
+                    .replace("{key}", key)
+                    .replace("{clientId}", clientId)
+                    .replace("{sensor}", sensor));
+        } else {
+            if(bapi == "bing" && protocol == "https://") {
+                apis[bapi].scripts[0] += "&s=1";
+            }
+
+            for (var i = 0; i < apis[bapi].scripts.length; i++) {
+                writeScript(apis[bapi].scripts[i]
+                    .replace("{key}", key)
+                    .replace("{clientId}", clientId)
+                    .replace("{sensor}", sensor), null, null, apis[bapi].async);
+            }
+        }
+
+        writeCss(baseLoc + "css/loader.css");
+        loadCore();
+    }
+
+    function isNullUB(value) {
+        if (value == null || value == "" || value == undefined) {
+            return true;
+        }
+
+        return false;
+    }
+
+    var ScribbleMapViewer = function(el, opts, data) {
+        opts = isNullUB(opts) ? {} : opts;
+
+        if (isNullUB(opts["tools"])) opts["tools"] = [];
+        if (isNullUB(opts["fillColorControl"])) opts["fillColorControl"] = false;
+        if (isNullUB(opts["lineColorControl"])) opts["lineColorControl"] = false;
+        if (isNullUB(opts["searchControl"])) opts["searchControl"] = false;
+        if (isNullUB(opts["lineSettingsControl"])) opts["lineSettingsControl"] = false;
+
+        var sm = new ScribbleMap(el, opts);
+
+        if (!isNullUB(data) && data.password != null && data.password != undefined) {
+            sm.map.load(data);
+        } else if(!isNullUB(data)) {
+            sm.map.loadById(data);
+        }
+        
+        return sm;
+    };
+
+    registerClass('ScribbleMapViewer', ScribbleMapViewer);
+})();

@@ -1,0 +1,747 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v13/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v13/LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v13/59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(//fonts.gstatic.com/s/ptsans/v8/JX7MlXqjSJNjQvI4heMMGvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(//fonts.gstatic.com/s/ptsans/v8/vtwNVMP8y9C17vLvIBNZI_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(//fonts.gstatic.com/s/ptsans/v8/9kaD4V2pNPMMeUVBHayd7vY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(//fonts.gstatic.com/s/ptsans/v8/ATKpv8nLYAKUYexo8iqqrg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.sm_editor div,.sm_editor input,.sm_editor button,.sm_editor span { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+.sm_editor {
+	touch-action: none; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: 'Open Sans', Verdana, Arial; line-height: initial;
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    text-align: left;
+	vertical-align: baseline;
+}
+
+.sm_crossHairs {position: absolute; left: 50%; top: 50%; width: 17px; height: 17px; background: url('../assets/shared/interface/crosshairs.png'); margin-left: -8px; margin-top: -28px; }
+
+.sm_undoControl { width: 50px; height: 34px; background-color: #000; position: absolute; left: 291px; top: 55px; 
+    border:  #b4b4b4 solid ;
+    border-width: 1px 1px 1px 1px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 10%, #e2e2e2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#ffffff), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 10%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 10%,#e2e2e2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 10%,#e2e2e2 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 10%,#e2e2e2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2',GradientType=0 ); 
+}
+.sm_undoControl .sm_undoButton { width: 50%; height: 100%; position: absolute; top: 0; left: 0; cursor: pointer; }
+
+.sm_undoControl .sm_undoButton.sm_undo:hover { background-color: #b2e1ff; }
+.sm_undoControl .sm_undoButton.sm_undo.sm_disabled:hover { background: none; cursor: default;}
+    .sm_undoControl .sm_undoButton.sm_undo .sm_undoIcon { background: url('../assets/modern/toolbar/undo.png'); width: 100%; height: 100%; background-position: center center; }
+.sm_undoControl .sm_undoButton.sm_undo.sm_disabled .sm_undoIcon { opacity: 0.4; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; filter: alpha(opacity=40);}
+.sm_undoControl .sm_undoButton.sm_redo:hover { background-color: #b2e1ff; }
+.sm_undoControl .sm_undoButton.sm_redo.sm_disabled:hover { background: none; cursor: default; }
+.sm_undoControl .sm_undoButton.sm_redo { left: 50%; border-left: 1px solid #b4b4b4; }
+ .sm_undoControl .sm_undoButton.sm_redo .sm_redoIcon { background: url('../assets/modern/toolbar/redo.png'); width: 100%; height: 100%; background-position: center center; }
+.sm_undoControl .sm_undoButton.sm_redo.sm_disabled .sm_redoIcon { opacity: 0.4;  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; filter: alpha(opacity=40);}
+
+.sm_zoomControl { position: absolute; width: 39px; height: 101px; right: 10px; top: 10px; z-index: 3;
+    border: 1px solid #b4b4b4;   
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+background: #f7f7f7; /* Old browsers */
+background: -moz-linear-gradient(top,  #f7f7f7 1%, #e2e2e2 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f7f7f7), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f7f7f7 1%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f7f7f7 1%,#e2e2e2 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f7f7f7 1%,#e2e2e2 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f7f7f7 1%,#e2e2e2 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
+}
+    .sm_zoomControl .track { margin-left: 3px; width: 16px; height: 100px; background-color: #FFFFFF; border-left: 2px solid #CCCCCC; border-right: 2px solid #CCCCCC; opacity: 0.75; }
+    .sm_zoomControl .sm_zoomButton { width: 26px; height: 26px; cursor: pointer; position: relative; }
+        .sm_zoomControl .sm_zoomButton .sm_zoomIcon {background-image: url(../assets/modern/controls/plusminus.png)}
+        .sm_zoomControl .sm_zoomButton.sm_plus { border-bottom: 1px solid #b4b4b4; width: 100%; height: 50%;  }
+        .sm_zoomControl .sm_zoomButton.sm_plus .sm_zoomIcon { width: 16px; height: 16px; position: absolute; left: 50%; top: 50%; margin-left: -8px; margin-top: -8px; }
+            .sm_zoomControl .sm_zoomButton.sm_plus:hover .sm_zoomIcon { background-position: 0px -16px;  }
+            .sm_zoomControl .sm_zoomButton.sm_plus.sm_over .sm_zoomIcon { }
+        .sm_zoomControl .sm_zoomButton.sm_minus { width: 100%; height: 50%; }
+        .sm_zoomControl .sm_zoomButton.sm_minus .sm_zoomIcon { width: 16px; height: 5px; position: absolute; left: 50%; top: 50%; margin-left: -8px; margin-top: -2px; background-position: 0 -32px; }
+            .sm_zoomControl .sm_zoomButton.sm_minus:hover .sm_zoomIcon { background-position: 0px -37px; }
+            .sm_zoomControl .sm_zoomButton.sm_minus.sm_over {  }
+
+.sm_overlayList { position: absolute; left: 10px; top: 83px; width: 150px; border: 2px solid #CCCCCC; background-color: #FFFFFF;overflow: hidden;max-height: 350px;*height: 350px;height: 150px}
+.sm_overlayList .sm_container { height: 100%;}
+.sm_overlayList .sm_placementLine {height: 3px; width: 150px; position: absolute; background-color: #0066FF; top: 0; left: 0; margin-top: -1px; }
+    .sm_overlayItem { position: relative;cursor: pointer; padding: 2px; overflow: hidden; font-family: Arial; border-bottom: 1px solid #CCCCCC; background-color: #FFFFFF;  }
+    .sm_overlayItem:hover { background-color: #ededed;color: #FFFFFF; }
+    .sm_overlayItem .sm_icon {margin-right: 5px;width: 25px;height: 25px; float: left;position: relative; }
+    .sm_overlayItem .sm_title { font-size: 12px;padding-top: 3px;white-space: nowrap;color: #666666; }
+    .sm_overlayItem .sm_description { font-size: 12px;display: none;}
+    .sm_overlayItem .sm_interfaceIcons { position: absolute; left: 5px; z-index: 10; }
+    .sm_overlayItem.sm_drag { opacity: 0.75; cursor: move; }
+
+.sm_dragBlocker { position: fixed; overflow: hidden; width: 100%; height: 100%; left: 0; top: 0; cursor: move; }
+.sm_interfaceIcons { background: url('../assets/shared/interface/iconSprite.png?13'); background-repeat: no-repeat; }
+.sm_interfaceIcons.sm_folderClosed { background-position: 0 0; width: 25px; height: 25px;}
+.sm_interfaceIcons.sm_folderOpen { background-position: -25px 0; width: 25px; height: 25px;}
+
+.sm_searchControl { position: absolute; left: 10px; top: 55px; width: 332px; height: 36px; }
+    .sm_searchControl .sm_searchIcon { position: absolute; right: 0; top: 0; width: 20px; height: 22px; background-image: url('../assets/modern/controls/search.png'); background-repeat: no-repeat; background-position: right center; }
+        .sm_searchControl .sm_searchIcon.sm_loading { background-image: url('../assets/modern/controls/small_loader.gif'); width: 16px; height: 16px; top: 0; right: 4px; }
+    .sm_searchControl .sm_tiWrapper { overflow: hidden; position: absolute; top: 0; bottom: 0; left: 0; right: 0; padding: 2px; border: 1px solid #CCCCCC; border-bottom-left-radius: 10px; background-color: #FFFFFF; }
+.sm_searchControl .sm_tiWrapper .sm_textInput .sm_wrapper { border: none; margin-top: 3px; }
+.sm_searchControl .sm_tiWrapper .sm_textInput input { background-color: transparent; border: none; color: #333333; font-size: 12px; font-weight: bold; }    
+        .sm_searchControl .sm_tiWrapper .sm_textInput input:focus { outline: 0; }
+            .sm_searchControl .sm_tiWrapper .sm_textInput .sm_blank { color: #999999; }
+
+    .sm_searchControl .sm_searchResults { border: 2px solid #CCCCCC; position: absolute; left: 0px; right: 0px; overflow: hidden; height: auto; top: 30px; }
+        .sm_searchControl .sm_searchResults .sm_noResults { font-weight: bold; padding: 5px; font-size: 12px; overflow: hidden; width: 100%; background-color: #CCCCCC; color: #333333; }
+        .sm_searchControl .sm_searchResults .sm_searchItem { cursor: pointer; font-size: 12px; overflow: hidden; width: 100%;background-color: #CCCCCC; }
+            .sm_searchControl .sm_searchResults .sm_searchItem:hover { background-color: #b2e1ff; }
+            .sm_searchControl .sm_searchResults .sm_searchItem.sm_highlight { background-color: #b2e1ff; }
+            .sm_searchControl .sm_searchResults .sm_searchItem.sm_alternate { background-color: #FFFFFF; }
+                .sm_searchControl .sm_searchResults .sm_searchItem.sm_alternate.sm_highlight { background-color: #b2e1ff; }
+                .sm_searchControl .sm_searchResults .sm_searchItem.sm_alternate:hover { background-color: #b2e1ff; }
+            .sm_searchControl .sm_searchResults .sm_searchItem .sm_label { margin: 5px; font-size: 12px; font-weight: bold; }
+            .sm_searchControl .sm_searchResults .sm_searchItem .sm_label img { float: left; height: 18px; margin-bottom: 5px; margin-right: 2px; margin-top: -2px; }
+
+.sm_mapTypeControl { position: absolute; bottom: 40px; right: 10px; white-space: nowrap; width: auto; }
+    .sm_mapTypeControl .sm_mapTypeButton { text-transform: uppercase; float: left; cursor: pointer; color: #666666; font-size: 12px; white-space: nowrap; padding: 11px; border: 1px solid #999999; border-width: 1px 1px 1px 0px; background-color: #FFFFFF; background-image: url(../assets/modern/panels/bottom_bg.png); background-position: bottom; font-family: 'PT Sans', Arial, verdana;}
+        .sm_mapTypeControl .sm_mapTypeButton.sm_selected { color: #268abd; font-weight: bold; }
+        .sm_mapTypeControl .sm_mapTypeButton.sm_first { 
+            border-left: 1px solid #999;
+            -webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px; }
+        .sm_mapTypeControl .sm_mapTypeButton.sm_last { -webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px; }
+
+.sm_colorPickerControl { position: absolute; width: 60px; height: 36px; overflow: hidden; cursor: pointer; }
+    .sm_colorPickerControl.sm_line { left: 400px; top: 55px; background-image: url('../assets/modern/toolbar/upExtended_line.png'); }
+    .sm_colorPickerControl.sm_fill { left: 341px; top: 55px; background-image: url('../assets/modern/toolbar/upExtended_fill.png'); }
+    .sm_colorPickerControl .sm_colorTab { width: 100%; height: 100%; }
+    .sm_colorPickerControl .sm_colorTabWrapper { background-image: url('../assets/modern/other/greytiles.png'); -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; width: 23px; height: 27px; border: 1px solid #CCC; overflow: hidden; position: absolute; right: 5px; top: 3px; }
+
+.sm_lineSettingsControl { width: 120px; height: 36px; position: absolute; left: 459px; top: 55px; background-image: url('../assets/modern/toolbar/upExtendedx2.png'); }
+    .sm_lineSettingsControl .sm_numberPicker { float: left; margin-left: 2px; margin-top: 6px; }
+    .sm_lineSettingsControl .sm_numberPicker input { color: #3366cc;}
+    .sm_lineSettingsControl .sm_weightIcon { width: 5px; float: left; height: 17px; margin-top: 10px; margin-left: 4px; background-image: url('../assets/modern/toolbar/thickness.png'); }
+    .sm_lineSettingsControl .sm_lineCap { position: absolute; right: 4px; top: 10px; height: 17px; width: 9px; cursor: pointer; }
+    .sm_lineSettingsControl .sm_ltWrapper { border: 1px solid #CCCCCC; background-color: #FFF; position: absolute; left: 55px; top: 6px; cursor: pointer; width: 48px; height: 23px; overflow: hidden; }
+        .sm_lineSettingsControl .sm_ltWrapper .sm_icon { }
+        .sm_lineSettingsControl .sm_ltWrapper .sm_lineType { width: 48px; height: 21px; color: #3366cc; }
+    .sm_lineSettingsControl .sm_lineTypeDropDown { width: 150px; height: 200px; overflow: auto; top: 30px; left: 0px; border: 1px solid #CCCCCC; background-color: #FFFFFF; position: absolute; padding-bottom: 10px; }
+        .sm_lineSettingsControl .sm_lineTypeDropDown .sm_ltWrapper { position: relative; width: 100%; height: 23px; left: 0px; border: none; }
+            .sm_lineSettingsControl .sm_lineTypeDropDown .sm_ltWrapper:hover { background-color: #b2e1ff; }
+            .sm_lineSettingsControl .sm_lineTypeDropDown .sm_ltWrapper .sm_lineType { width: 100%; }
+    .sm_lineSettingsControl .sm_lineCap.sm_round { background-image: url('../assets/modern/toolbar/roundCap.png'); }
+    .sm_lineSettingsControl .sm_lineCap.sm_square { background-image: url('../assets/modern/toolbar/squareCap.png'); }
+
+.sm_legendControl { height: auto; position: absolute; right: 7px; bottom: 80px; padding: 7px; padding-right: 20px; max-height: 250px; overflow: auto; display: none; }
+.sm_layerItem { height: 24px; position: relative; margin-bottom: 5px; white-space: nowrap; }
+ .sm_layerItem .sm_details { display: inline-block; }
+ .sm_layerItem .sm_label { display: inline-block; width: auto; height: 24px; color: #333; padding-top: 5px; font-size: 12px; }
+.sm_layerItem .sm_details .sm_input { float: left; display: inline-block; margin-top: 5px; margin-right: 7px;}
+    .sm_layerItem .sm_iconWrapper { width: 48px; height: 24px; overflow: hidden; float: left; display: inline-block; margin-right: 5px; position: relative; }
+    .sm_layerItem .sm_iconWrapper .sm_icon { width: 48px; height: 24px; margin-left: auto; margin-right: auto; }
+
+.sm_paintBucketCursor { background-image: url(../assets/shared/cursors/paintbucket_cursor.png); width: 31px; height: 31px; left: -8px; top: -27px; }
+.sm_pointerCursor { background-image: url(../assets/shared/cursors/pends.png); width: 33px; height: 33px; left: -3px; top: -3px; }
+.sm_labelCursor { background-image: url(../assets/shared/cursors/pends.png); width: 33px; height: 33px; left: -3px; top: -3px; }
+.sm_penCursor { background-image: url(../assets/shared/cursors/pends.png); width: 33px; height: 33px; left: -3px; top: -3px; }
+.sm_eraserCursor { background-image: url(../assets/shared/cursors/eraser.png); width: 33px; height: 33px; left: -3px; top: -3px; }
+.sm_handCursor { background-image: url(../assets/shared/cursors/open.png); width: 33px; height: 33px; left: -10px; top: -5px; }
+.sm_grabCursor { background-image: url(../assets/shared/cursors/grab.png); width: 33px; height: 33px; left: -10px; top: -5px; }
+.sm_imageCursor { background-image: url(../assets/shared/cursors/image.png); width: 31px; height: 31px; }
+
+.sm_markerList { overflow: auto; max-height: 250px; padding-right: 35px; width: auto; width: 150px; -webkit-overflow-scrolling: touch; position: relative; }
+    .sm_markerList .sm_label { cursor: pointer; }
+        .sm_markerList .sm_label:hover { text-decoration: underline; }
+
+.sm_markerCluster { background-color: #FF0000; border: 2px solid #333333; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; width: 35px; height: 35px; }
+.sm_markerCluster.sm_over { background-color: #333333; }    
+.sm_markerCluster.sm_size10 { background-color: #008000; }
+        .sm_markerCluster.sm_size10.sm_over { background-color: #333333; }
+    .sm_markerCluster.sm_size25 { background-color: #FF9900; }
+        .sm_markerCluster.sm_size25.sm_over { background-color: #333333; }
+    .sm_markerCluster .sm_count { text-align: center; width: auto; height: auto; font-weight: bold; font-size: 11px; color: #FFFFFF; z-index: 1; white-space: nowrap; margin-left: auto; margin-right: auto; margin: 5px; line-height: 25px; }
+
+.sm_pieMarkerCluster { width: 35px; height: 35px; }
+.sm_pieMarkerCluster .sm_count { font-size: 14px; width: 36px; text-align: center; font-weight: bold; white-space: nowrap; line-height: 36px; font-family: 'Open Sans', Verdana, Arial; color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; }
+
+.sm_pieList { width: 250px; height: auto; }
+.sm_pieList .sm_pieListItem { width: 100%; height: 26px; margin-bottom: 2px; border: 1px solid #999999; overflow: hidden; background-color: #CCCCCC; }
+.sm_pieList .sm_pieListItem .sm_pbarWrapper { width: 100%; height: 100%; position: relative; }
+.sm_pieList .sm_pieListItem .sm_pbarWrapper .sm_info { z-index: 10; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
+.sm_pieList .sm_pieListItem .sm_pbarWrapper .sm_info img { z-index: 10; height: 20px; margin-top: 3px; float: left; margin-left: 3px; margin-right: 3px; }
+.sm_pieList .sm_pieListItem .sm_pbarWrapper .sm_info .sm_label { color: #000000;
+    line-height: 26px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 10;
+}
+.sm_pieList .sm_pieListItem .sm_pbarWrapper .sm_pbar { height: 100%; position: absolute; left: 0px; top: 0px; z-index: 5; }
+
+.sm_error { color: #FF0000; font-weight: bold; }
+
+.sm_renderLayer .sm_shapeLayer { position: absolute; }
+
+.sm_clickThrough { pointer-events: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../assets/modern/other/t.png', sizingMethod='scale'); background: none !important; }
+
+.sm_toolBox { position: absolute; top: 10px; left: 10px; height: 31px; z-index: 4; }
+
+    .sm_toolBox .sm_toolIcons { float: left; }
+
+.sm_colorPickerEditor  { background-color: #ffffff; width: 225px; height: 135px; border: 2px solid #CCCCCC; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; position: absolute; left: 0px; top: 0px; z-index: 1000; padding: 10px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; background-image: url(../assets/modern/panels/bottom_bg.png); background-position: bottom; font-family: 'Open Sans'; }
+    .sm_colorPickerEditor input { height: 18px; font-size: 12px;padding-left: 0px; }
+    .sm_colorPickerEditor .sm_cpLabel { color: #666666; position: absolute; bottom: 14px; right: 50px; font-size: 12px; font-weight: bold; padding-top: 31px; }
+    .sm_colorPickerEditor .sm_cpHSL { border: 1px solid #CCCCCC; }
+    .sm_colorPickerEditor .sm_cpHSV { border: 1px solid #CCCCCC; }
+
+.sm_toolBox .sm_toolControls .sm_colorPicker { float: left; position: relative; width: 60px; height: 31px; cursor: pointer; background-image: url('../assets/modern/toolbar/upExtended.png'); }
+.sm_toolBox .sm_toolIcons .sm_toolIcon { 
+    width: 38px; height: 43px; float: left;
+    border:  #b4b4b4 solid ;
+    border-width: 1px 1px 1px 0px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 10%, #e2e2e2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#ffffff), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 10%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 10%,#e2e2e2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 10%,#e2e2e2 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 10%,#e2e2e2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
+}
+
+.sm_toolBox .sm_toolIcons .sm_toolIcon:first-child {
+    border-left: 1px solid #b4b4b4;
+
+    -webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+.sm_toolBox .sm_toolIcons .sm_toolIcon:last-child {
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_over { background: none; background-color: #b2e1ff; filter: none; }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_selected {  background: none; background-color: #b2e1ff; filter: none;}
+    .sm_toolBox .sm_toolIcons .sm_toolIcon .sm_icon { width: 100%; height: 100%; cursor: pointer; background-position: center center; background-repeat: no-repeat; }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_menu { width: 60px; cursor: pointer; }
+        .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_menu .sm_icon{ width: 100%; overflow: hidden; margin-left: 0px; }
+        .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_menu .sm_icon .sm_label { width: 100%; text-align: center; margin-top: 13px; font-size: 12px; color: #4b7cbf; font-weight: bold; }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_menu.sm_selected { }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_edit .sm_icon { background-image: url(../assets/modern/toolbar/pointer.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_flightLine .sm_icon { background-image: url(../assets/modern/toolbar/flightLine.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_circle .sm_icon { background-image: url(../assets/modern/toolbar/circle.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_rectangle .sm_icon { background-image: url(../assets/modern/toolbar/rectangle.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_drag .sm_icon { background-image: url(../assets/modern/toolbar/drag.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_eraser .sm_icon { background-image: url(../assets/modern/toolbar/eraser.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_fill .sm_icon { background-image: url(../assets/modern/toolbar/paintbucket.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_scribble .sm_icon { background-image: url(../assets/modern/toolbar/scribble.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_line .sm_icon { background-image: url(../assets/modern/toolbar/line.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_polygon .sm_icon { background-image: url(../assets/modern/toolbar/polygon.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_label .sm_icon { background-image: url(../assets/modern/toolbar/text.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_singleMarker .sm_icon { background-image: url(../assets/modern/toolbar/marker.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_marker .sm_icon { background-image: url(../assets/modern/toolbar/marker.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_image .sm_icon { background-image: url(../assets/modern/toolbar/pic.png); }
+    .sm_toolBox .sm_toolIcons .sm_toolIcon.sm_connectedLine .sm_icon { background-image: url(../assets/modern/toolbar/cline.png); }
+
+.sm_markerImgError { background-image: url(http://www.scribblemaps.com/markers/paddle/blu-blank.png); }
+.sm_imgError { background-image: url(http://www.scribblemaps.com/api/js/1.0/assets/shared/imgError.png); }
+
+.sm_toolTip {position: absolute; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; padding: 5px; z-index: 11; width: auto; height: auto; margin-left: 25px; margin-top: 25px; font-size: 12px; background-color: #FFFFFF; border: 1px solid #666666; white-space: nowrap; -moz-box-shadow: 2px 2px 10px #333333; -webkit-box-shadow: 2px 2px 10px #333333; box-shadow: 2px 2px 10px #333333; }
+.sm_toolTip .sm_help { max-width: 150px; white-space: normal;*width: 150px;font-size: 12px;}
+.sm_toolTip .sm_imgAnchor { background: url(../assets/shared/toolTips/marker_anchor.png); width: 58px; height: 57px; margin-left: auto; margin-right: auto; }
+
+.sm_editNodeWrapper { position: absolute; cursor: pointer; }
+    .sm_editNodeWrapper .sm_editNode { width: 10px; height: 10px; background-color: #FFFFFF; border: 1px solid #666666; position: absolute; left: -6px; top: -6px; cursor: pointer; }
+        .sm_editNodeWrapper .sm_editNode.sm_selected { border: 4px solid #0000FF; left: -9px; top: -9px; }
+        .sm_editNodeWrapper .sm_editNode.sm_over { border: 4px solid #0000FF; left: -9px; top: -9px; }
+        .sm_editNodeWrapper .sm_editNode.sm_down { border: 1px solid #000000; background-color: transparent; }
+        .sm_editNodeWrapper .sm_editNode.sm_touch { width: 20px; height: 20px; left: -10px; top: -10px; }
+        .sm_editNodeWrapper .sm_editNode.sm_touch.sm_down { width: 40px; height: 40px; left: -20px; top: -20px; border: 1px solid #000000;}
+        .sm_editNodeWrapper .sm_editNode.sm_addNode { width: 9px; height: 9px; background-color: #FFFFFF; border: 1px solid #666666; background-image: url(../assets/dark/ui/plus.png); background-position: center center; background-repeat: no-repeat; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; position: absolute; left: -5px; top: -5px; cursor: pointer; }
+        .sm_editNodeWrapper .sm_editNode.sm_touch.sm_addNode { width: 18px; height: 18px; -moz-border-radius: 9px; -webkit-border-radius: 9px; border-radius: 9px; position: absolute; left: -9px; top: -9px; }
+        .sm_editNodeWrapper .sm_editNode.sm_addNode.sm_over { background-color: #CCCCCC; }
+
+.sm_alert { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; background-image: url(../assets/modern/other/wbg_p75.png); }
+    .sm_alert .sm_panel { width: 250px; height: auto; position: absolute; top: 50%; left: 50%; margin-left: -125px; }
+        .sm_alert .sm_panel .sm_label { width: 100%; text-align: center; font-size: 13px; margin-top: 10px; color: #333333; }
+        .sm_alert .sm_panel .sm_buttons { width: 100%; height: auto; text-align: center; margin-top: 5px; }
+        .sm_alert .sm_panel .sm_buttons .sm_button { margin: 5px; min-width: 45px; display:inline-block; *display:inline; padding: 3px; }
+        .sm_alert .sm_panel .sm_passwordRequest { padding: 5px 25px 0 25px; }
+        .sm_alert .sm_panel .sm_imageRequest { padding: 5px 25px 0 25px; }
+        .sm_alert .sm_panel .sm_contentRequest { padding: 5px 25px 0 25px;  }
+        .sm_alert .sm_panel .sm_contentRequest .sm_dropDown select { width: 100%; }
+
+.sm_viewLoader { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; background-image: url(../assets/modern/other/wbg_p75.png); }
+    .sm_viewLoader .sm_panel { width: 250px; height: 72px; position: absolute; top: 50%; left: 50%; margin-top: -36px; margin-left: -125px; border-width: 3px; }
+        .sm_viewLoader .sm_panel .sm_loaderBar { margin-top: 17px; width: 220px; height: 19px; background-image: url(../assets/modern/other/loaderBar.gif); margin-left: auto; margin-right: auto; position: relative; }
+            .sm_viewLoader .sm_panel .sm_loaderBar .sm_progress { width: 50%; height: 100%; position: absolute; left: 0px; top: 0px; background-image: url(../assets/modern/other/loaderBarProgress.gif); }
+        .sm_viewLoader .sm_panel .sm_message { width: 100%; text-align: center; }
+        .sm_viewLoader .sm_panel .sm_label { width: 100%; text-align: center; font-size: 12px; margin-top: 5px; font-weight: bold; color: #666666; }
+
+.sm_footer {  color: #666666; background: url(../assets/modern/other/footer_bg.jpg); background-position: bottom; font-family: Arial, Verdana, Geneva, 'DejaVu Sans', sans-serif }
+    .sm_footer .sm_fullScreen { background: url(../assets/modern/other/fullscreen.png); width: 15px; height: 15px; margin-left: 5px; margin-top: 2px; cursor: pointer; }
+        .sm_footer .sm_fullScreen:hover { background-position: 0px -15px; }
+        .sm_footer .sm_fullScreen.minimize { background-position: 15px 0px; }
+            .sm_footer .sm_fullScreen.minimize:hover { background-position: 15px -15px; }
+    .sm_footer .sm_settings { background: url(../assets/modern/other/settings.png); width: 15px; height: 15px; cursor: pointer; position: absolute; left: 25px; top: 2px; }
+        .sm_footer .sm_settings:hover { background-position: 0px -15px; }
+    .sm_footer .sm_powered { color: #666666;cursor: pointer;font-weight: bold; }
+    .sm_footer .sm_powered:hover { color: #999999; }
+
+.sm_numberPicker { width: 40px; height: 23px; position: relative; }
+    .sm_numberPicker .sm_inputWrapper { border: 1px solid #CCCCCC; position: absolute; left: 0px; right: 15px; height: 22px; overflow: hidden; }
+    .sm_numberPicker input { text-align: center; font-size: 12px; font-weight: bold; color: #333333; width: 100%; height: 22px; border: 0;outline: none; }
+    .sm_numberPicker .sm_tickButtons { width: 15px; height: 24px; position: absolute; right: 0px; top: 0px; }
+        .sm_numberPicker .sm_tickButtons .sm_up { width: 15px; cursor: pointer; height: 10px; border: 1px solid #CCCCCC; position: absolute; top: 0; -webkit-border-top-right-radius: 5px; -moz-border-radius-topright: 5px; border-top-right-radius: 5px; background: rgb(252,255,244); /* Old browsers */ background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 76%, rgba(179,190,173,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(76%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */ }
+            .sm_numberPicker .sm_tickButtons .sm_up:hover { border-color: #999999; }
+            .sm_numberPicker .sm_tickButtons .sm_up .sm_icon { width: 11px; height: 9px; background-image: url(../assets/modern/toolbar/tickArrows.png); background-position: 0px -1px; margin-left: 2px; margin-top: 2px; }
+        .sm_numberPicker .sm_tickButtons .sm_down { width: 15px; cursor: pointer; height: 10px; position: absolute; bottom: 0px; border: 1px solid #CCCCCC; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomright: 5px; border-bottom-right-radius: 5px; background: rgb(252,255,244); /* Old browsers */ background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 76%, rgba(179,190,173,1) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(76%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 76%,rgba(179,190,173,1) 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */ }
+            .sm_numberPicker .sm_tickButtons .sm_down:hover { border-color: #999999; }
+            .sm_numberPicker .sm_tickButtons .sm_down .sm_icon { width: 11px; height: 9px; background-image: url(../assets/modern/toolbar/tickArrows.png); background-position: 0px 8px; margin-left: 2px; margin-top: 2px; }
+
+.sm_divLoader { width: 100%; height: 100%; left: 0px; top: 0px; position: absolute; background-image: url(../assets/modern/other/wbg_p75.png); }
+    .sm_divLoader .sm_loader { background-color: transparent; }
+
+.sm_loader { width: 100%; height: 100%; position: absolute; background-position: center center; background-repeat: no-repeat; background-image: url(../assets/modern/other/spinner.gif); background-color: #FFFFFF; }
+    .sm_loader .sm_items { position: absolute; font-size: 10px; color: #CCCCCC; left: 10px; top: 10px; }
+
+.sm_panel { background-color: #FFFFFF; border: 5px solid #666666; border: 5px solid rgba(1,0,0,.4);  -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; border-radius: 10px; position: absolute; background-image: url(../assets/modern/panels/bottom_bg.png); background-position: bottom; cursor: default; }
+    .sm_panel .sm_close:hover { }
+    .sm_panel .sm_label.sm_header { position: absolute;left: 0;top: 0;margin-top: 3px;margin-left: 7px;color: #666666;font-size: 10px;font-weight: bold;}
+
+    .sm_panel.sm_connectedLineTool { width: 150px; height: 45px; z-index: 10; right: 10px; bottom: 75px; }
+        .sm_panel.sm_connectedLineTool .sm_button { width: 120px; border: 1px solid #999999; font-size: 12px; font-weight: bold; margin-top: 5px; margin-left: auto; margin-right: auto; }
+
+    .sm_panel.sm_polygonTool { width: 150px; height: 50px; z-index: 10; right: 10px; bottom: 75px; }
+        .sm_panel.sm_polygonTool .sm_button { width: 120px; border: 1px solid #999999; font-size: 12px; font-weight: bold; margin-top: 5px; margin-left: auto; margin-right: auto; }
+
+    .sm_panel.sm_markerTool { width: 110px; height: 100px; z-index: 10; right: 10px; bottom: 80px; }
+        .sm_panel.sm_markerTool .sm_anchorRotation { position: absolute; left: 10px; top: 7px; width: 85px; height: 85px; background: url(../assets/modern/panels/marker/circle.png); cursor: pointer; }
+            .sm_panel.sm_markerTool .sm_anchorRotation .sm_markerDisplay { position: absolute; top: 20px; left: 20px; width: 45px; height: 45px; }
+            .sm_panel.sm_markerTool .sm_anchorRotation .sm_nobTrack { width: 75px; height: 75px; top: 5px; left: 5px; position: absolute; }
+                .sm_panel.sm_markerTool .sm_anchorRotation .sm_nobTrack .sm_nob { width: 10px; height: 10px; position: absolute; background: url(../assets/dark/panels/marker/nob.png); }
+    .sm_panel.sm_eraserTool { width: 150px; height: 50px; z-index: 10; right: 10px; bottom: 75px; }
+    .sm_panel.sm_eraserTool .sm_button { width: 120px; border: 1px solid #999999; font-size: 12px; font-weight: bold; margin-top: 5px; text-align: center; margin-left: auto; margin-right: auto; }
+    
+    .sm_panel.sm_settingsPanel { width: 250px; height: 205px; padding-top: 25px; padding-left: 15px; }
+    .sm_panel.sm_settingsPanel .sm_radioButtonGroup { clear: both;height: 50px; }
+    .sm_panel.sm_settingsPanel .sm_radioButtonGroup .sm_label { margin-bottom: 2px; }
+    .sm_panel.sm_settingsPanel .sm_radioButtonGroup .sm_label.sm_groupHeader { font-weight: bold; }
+    .sm_panel.sm_settingsPanel .sm_radioButtonGroup .sm_radioButton { float: left;width: 75px; }
+    .sm_panel.sm_settingsPanel .sm_radioButtonGroup .sm_radioButton .sm_input { float: left; }
+    .sm_panel.sm_settingsPanel .sm_dropDown { float: left; margin-right: 10px; margin-bottom: 10px; }
+    .sm_panel.sm_settingsPanel .sm_dropDown .sm_label { font-size: 12px; }
+    .sm_panel.sm_settingsPanel .sm_dropDown select { width: 95px; }
+
+    .sm_panel.sm_menuPanel { padding: 15px; width: 455px; }
+    .sm_panel.sm_menuPanel .sm_icons { height: auto; width: auto; }
+    .sm_panel.sm_menuPanel .sm_icons .sm_clear { clear: both; }
+    .sm_panel.sm_menuPanel .sm_category { clear: both; }
+    .sm_panel.sm_menuPanel .sm_category .sm_label.sm_categoryHeader { font-weight: bold; width: 100%; border-bottom: 1px solid #CCCCCC; margin-bottom: 5px; }
+     .sm_panel.sm_menuPanel .sm_category .sm_iconContainer { }
+    .sm_panel.sm_menuPanel .sm_category .sm_iconContainer .sm_containerFooter { clear: both; }
+    .sm_menuIcon { cursor: pointer; width: 55px; height: 82px; float: left; overflow: hidden; margin-right: 10px; margin-bottom: 10px; }
+    .sm_menuIcon:hover {  -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0,1)); -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#000')"; filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#000')"; }
+    .sm_menuIcon .sm_label { width: 55px; color: #666666; font-size: 12px; text-align: center; font-weight: bold; }
+    .sm_menuIcon .sm_graphic { width: 55px; height: 50px; margin-left: auto; margin-right: auto; }
+    .sm_menuIcon .sm_graphic.sm_yourMaps { background-image: url(../assets/shared/menu/icon_files.png); }
+    .sm_menuIcon .sm_graphic.sm_newMap { background-image: url(../assets/shared/menu/icon_newmap.png); }
+    .sm_menuIcon .sm_graphic.sm_loadMap { background-image: url(../assets/shared/menu/icon_loadmap.png); }
+    .sm_menuIcon .sm_graphic.sm_saveMap { background-image: url(../assets/shared/menu/icon_savemap.png); }
+    .sm_menuIcon .sm_graphic.sm_getWidget { background-image: url(../assets/shared/menu/icon_widget.png); }
+    .sm_menuIcon .sm_graphic.sm_sendToFriend { background-image: url(../assets/shared/menu/icon_s2f.png); }
+    .sm_menuIcon .sm_graphic.sm_saveKML { background-image: url(../assets/shared/menu/icon_savekml.png); }
+    .sm_menuIcon .sm_graphic.sm_saveGPX { background-image: url(../assets/shared/menu/icon_savegpx.png); }
+    .sm_menuIcon .sm_graphic.sm_googleMaps { background-image: url(../assets/shared/menu/icon_googlemaps.png); }
+    .sm_menuIcon .sm_graphic.sm_saveImage { background-image: url(../assets/shared/menu/icon_saveimage.png); }
+    .sm_menuIcon .sm_graphic.sm_savePDF { background-image: url(../assets/shared/menu/icon_savepdf.png); }
+    .sm_menuIcon .sm_graphic.sm_facebook { background-image: url(../assets/shared/menu/icon_facebook.png); }
+    .sm_menuIcon .sm_graphic.sm_settings { background-image: url(../assets/shared/menu/icon_settings.png); }
+    .sm_menuIcon .sm_graphic.sm_print { background-image: url(../assets/shared/menu/icon_print.png); }
+    .sm_menuIcon .sm_graphic.sm_styleMap { background-image: url(../assets/shared/menu/icon_mapStyle.png); }
+    .sm_menuIcon .sm_graphic.sm_saveSHP { background-image: url(../assets/shared/menu/icon_saveshp.png); }
+    .sm_menuIcon .sm_graphic.sm_saveDXF { background-image: url(../assets/shared/menu/icon_savedxf.png); }
+
+    .sm_panel.sm_mapInfo { width: 520px;color: #0b333c;padding: 10px;}
+    .sm_panel.sm_mapInfo .sm_label { color: #0b333c }
+    .sm_panel.sm_mapInfo .sm_savedLabel { font-size: 24px;font-weight: bold;position: relative; }
+    .sm_panel.sm_mapInfo .sm_infoItem { margin-top: 12px;padding-left: 10px;padding-right: 15px; }
+    .sm_panel.sm_mapInfo .sm_infoItem .sm_label { font-size: 12px; }
+    .sm_panel.sm_mapInfo .sm_infoItem .sm_title { font-size: 14px;font-weight: bold; }
+    .sm_panel.sm_mapInfo .sm_textInput input { color: #0000FF;font-weight: bold;font-size: 14px; }
+    .sm_panel.sm_mapInfo .sm_shareIcons { position: absolute;right: 5px; top: 5px}
+    .sm_panel.sm_mapInfo .sm_button { width: 150px; margin-left: auto; margin-right: auto; font-weight: bold; margin-top: 10px}
+
+    .sm_panel.sm_loadMap { padding: 25px 15px 15px 15px; width: 150px; height: auto; }
+    .sm_panel.sm_loadMap .sm_textInput { margin-bottom: 7px; }
+    .sm_panel.sm_loadMap .sm_button { margin-top: 7px; }
+
+    .sm_panel.sm_saveMap { padding: 25px 15px 15px 15px; width: 300px; height: auto; }
+    .sm_panel.sm_saveMap .sm_left { float: left; width: 140px; margin-right: 20px; }
+    .sm_panel.sm_saveMap .sm_helpIcon { right: -2px;top: -2px;cursor: pointer; }
+    .sm_panel.sm_saveMap .sm_radioButton { position: relative; }
+    .sm_panel.sm_saveMap .sm_textInput { margin-bottom: 7px;position: relative; }
+     .sm_panel.sm_saveMap .sm_textArea { height: 100px;  }
+        .sm_panel.sm_saveMap .sm_textArea textarea { font-family: 'Open Sans', Arial }
+     .sm_panel.sm_saveMap .sm_button { clear: both; }
+    .sm_panel.sm_saveMap .sm_right { width: 140px; float: left; margin-bottom: 7px; }
+    
+     .sm_panel.sm_widget { padding: 25px 15px 15px 15px; width: 400px; height: auto; }
+     .sm_panel.sm_widget .sm_left { float: left; width: 100px; margin-right: 20px; }
+     .sm_panel.sm_widget .sm_right { width: 275px; float: left; margin-bottom: 7px; }
+     .sm_panel.sm_widget .sm_wrapper { float: left;margin-right: 10px;position: relative; }
+      .sm_panel.sm_widget .sm_wrapper .sm_numberPicker { width: 75px; }
+     .sm_panel.sm_widget .sm_options { clear: both; margin: 10px; padding-top: 10px; margin-left: 0; }
+     .sm_panel.sm_widget .sm_options .sm_checkBox {float: left; width: 110px; }
+     .sm_panel.sm_widget .sm_options .sm_optionsTitle { font-weight: bold; margin-bottom: 5px; }
+     .sm_panel.sm_widget .sm_radioButton { float: left; width: 110px; }
+     .sm_panel.sm_widget .sm_textArea { height: 50px;clear: both; padding-top: 10px; }
+     .sm_panel.sm_widget .sm_textArea .sm_wrapper { position: relative;top: 0;height: 50px;}
+     .sm_panel.sm_widget .sm_button { clear: both; }
+     .sm_panel.sm_widget .sm_label { font-weight: bold; }
+
+    .sm_panel.sm_emailMap { padding: 25px 15px 15px 15px; width: 200px; height: auto; }
+    .sm_panel.sm_emailMap .sm_left { float: left;width: 198px;}
+    .sm_panel.sm_emailMap .sm_label { font-weight: bold; font-size: 10px }
+    .sm_panel.sm_emailMap .sm_right { float: left; width: 198px}
+    .sm_panel.sm_emailMap .sm_textInput { margin-bottom: 7px; }
+    .sm_panel.sm_emailMap .sm_button { margin-top: 7px;clear: both; }
+    .sm_panel.sm_emailMap .sm_textArea { height: 75px }
+
+     .sm_panel.sm_saveImage { padding: 25px 15px 15px 15px; width: 255px; height: auto; }
+     .sm_panel.sm_saveImage .sm_wrapper { float: left;margin-right: 10px;position: relative; }
+     .sm_panel.sm_saveImage .sm_wrapper .sm_numberPicker { width: 75px; margin-bottom: 5px; }
+     .sm_panel.sm_saveImage .sm_wrapper.sm_format { width: 100%; border-bottom: 1px solid #CCCCCC; margin-bottom: 12px; }
+     .sm_panel.sm_saveImage .sm_wrapper.sm_format .sm_radioButton { width: 85px; float: left; }
+     .sm_panel.sm_saveImage .sm_wrapper.sm_format .sm_radioButton.sm_pdf { width: 120px; }
+	 .sm_panel.sm_saveImage .sm_button { clear: both; }
+     .sm_panel.sm_saveImage .sm_label { font-weight: bold; }
+     .sm_panel.sm_saveImage .sm_larger {margin-top: 8px; text-align: center; color: #666666; }
+     .sm_panel.sm_saveImage .sm_checkBox { clear: both; margin-bottom: 0px; }
+     .sm_panel.sm_saveImage .sm_pixels { font-size: 12px; color: #333333; margin-bottom: 10px;  }
+
+    .sm_panel.sm_markerPanel { width: 650px; height: 350px; padding-top: 25px; padding-left: 15px; }
+        .sm_panel.sm_markerPanel .sm_categories { border: 1px solid #cccccc; position: absolute; left: 15px; width: 170px; height: 315px; overflow: auto; color: #0b333c; }
+            .sm_panel.sm_markerPanel .sm_categories .sm_highlighter { z-index: -1; width: 100%; height: 18px; background-color: #b2e1ff; position: absolute; top: 0px; left: 0px; }
+            .sm_panel.sm_markerPanel .sm_categories .sm_highlighted { z-index: -2; width: 100%; height: 18px; position: absolute; background-color: #7fceff; top: 0px; left: 0px; }
+            .sm_panel.sm_markerPanel .sm_categories ul { z-index: 2; margin: 0px; padding: 0px; list-style-type: none; }
+                .sm_panel.sm_markerPanel .sm_categories ul .sm_root { margin-left: 0px; }
+                .sm_panel.sm_markerPanel .sm_categories ul li { margin-left: 14px; font-size: 12px; }
+            .sm_panel.sm_markerPanel .sm_categories .sm_header { margin: 2px; cursor: pointer; height: 14px; }
+                .sm_panel.sm_markerPanel .sm_categories .sm_header .sm_icon { float: left; margin-right: 5px; background-image: url(../assets/modern/panels/folderIcons.png); }
+                    .sm_panel.sm_markerPanel .sm_categories .sm_header .sm_icon.sm_item { width: 28px; height: 14px; background-position: 0px -31px; }
+                    .sm_panel.sm_markerPanel .sm_categories .sm_header .sm_icon.sm_folder { width: 28px; height: 14px; background-position: 0px 0px; }
+            .sm_panel.sm_markerPanel .sm_categories .sm_subLoader { background-image: url(../assets/dark/other/subloader.gif); background-repeat: no-repeat; background-position: 35px; width: 100%; height: 16px; }
+            .sm_panel.sm_markerPanel .sm_categories .sm_header .sm_icon.sm_folder.sm_open { background-position: 0px -17px; }
+            .sm_panel.sm_markerPanel .sm_categories .sm_header .sm_label { white-space: nowrap; }
+
+            .sm_panel.sm_markerPanel .sm_recentlyUsed { border: 1px solid #cccccc; position: absolute; left: 15px; width: 170px; height: 95px; overflow: auto; color: #0b333c; bottom: 30px; }
+            .sm_panel.sm_markerPanel .sm_categories.sm_recentVisible { height: 190px; }
+            .sm_panel.sm_markerPanel .sm_recentlyUsedBar { position: absolute; left: 15px; width: 170px; top: 225px; }
+            .sm_panel.sm_markerPanel .sm_recentlyUsedBar .sm_label { font-weight: bold; padding-top: 2px; }
+            .sm_panel.sm_markerPanel .sm_recentlyUsedBar .sm_button { position: absolute; top: 0; right: 0; padding: 2px;  }
+
+        .sm_panel.sm_markerPanel .sm_markerSelect { border: 1px solid #cccccc; position: absolute; left: 200px; right: 15px; height: 315px; overflow: auto; }
+            .sm_panel.sm_markerPanel .sm_marker { float: left; margin: 5px; }
+                .sm_panel.sm_markerPanel .sm_marker.sm_loading { float: left; margin: 5px; background-image: url(../assets/dark/other/subloader.gif); background-repeat: no-repeat; background-position: center center; }
+                .sm_panel.sm_markerPanel .sm_marker .sm_markerImage { border: none; cursor: pointer; }
+                .sm_panel.sm_markerPanel .sm_marker:hover { -webkit-filter: drop-shadow(5px 5px 7px rgba(0,0,0,1)); -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=5, OffY=5, Color='#000')"; filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=5, OffY=5, Color='#000')"; cursor: pointer; }
+        .sm_panel.sm_markerPanel .sm_markerScaleIcon { position: absolute; background-image: url(../assets/modern/panels/marker/scale.png); width: 31px; height: 20px; bottom: 5px; right: 87px; }
+        .sm_panel.sm_markerPanel .sm_sizeSelector { position: absolute; right: 15px; bottom: 5px; width: 65px; height: 20px; -webkit-border-top-left-radius: 5px; -webkit-border-bottom-left-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-bottomleft: 5px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border: 1px solid #999999; color: #0b333c; font-weight: bold; }
+        
+        .sm_panel.sm_markerPanel .sm_addCustom { position: absolute; left: 15px; bottom: 5px; height: 18px; width: 171px; padding: 0; padding-top: 3px; font-weight: bold; }
+        .sm_panel.sm_markerPanel .sm_customMarker {}
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_textInput { position: relative; margin-top: 17px; margin-bottom: 7px; }
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_textInput .sm_helpIcon { top: -4px;}
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_panel { width: 250px; left: 50%; margin-left: -125px; top: 50%; margin-top: -75px; padding: 10px; }
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_iconWrapper {position: relative; margin-left: auto; margin-right: auto; width: 64px; height: 64px; margin-bottom: 5px;}
+            .sm_panel.sm_markerPanel .sm_customMarker .sm_iconWrapper img { border: 1px solid #CCCCCC; padding: 0; margin: 0 }
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_iconWrapper .sm_loading { background-image: url(../assets/dark/other/subloader.gif); background-repeat: no-repeat; background-position: center center; }
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_iconWrapper .sm_cross { width: 15px; height: 15px; background-image: url(../assets/shared/cross.gif); position: absolute; z-index: 10;}
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_anchorControls { position: absolute; top: 68px; left: 10px; font-weight: bold; }
+        .sm_panel.sm_markerPanel .sm_customMarker .sm_anchorControls .sm_numberPicker { width: 75px; }
+
+.sm_textEditor { width: 100%; padding-bottom: 10px; overflow: hidden; }
+    .sm_textEditor .sm_textAreaWrapper { height: 250px; border: 1px solid #CCCCCC; overflow: hidden; position: relative; }
+        .sm_textEditor .sm_textAreaWrapper .sm_textArea { width: 100%; height: 100%; padding: 0px; margin: 0px; outline: none; background-color: #FFFFFF; }
+            .sm_textEditor .sm_textAreaWrapper .sm_textArea.sm_srcView { border: none; }
+             .sm_textEditor .sm_textAreaWrapper .sm_toggleButtons { position: absolute; right: 0px; bottom: 0px; font-size: 12px; z-index: 1; }
+             .sm_textEditor .sm_textAreaWrapper .sm_toggleButtons .sm_htmlToggle { background-color: #CCCCCC; display: inline-block; padding: 5px; margin-right: px; text-align: center; cursor: pointer; }
+             .sm_textEditor .sm_textAreaWrapper .sm_toggleButtons .sm_visualToggle { background-color: #CCCCCC; display: inline-block; padding: 5px; text-align: center; cursor: pointer;}
+             .sm_textEditor .sm_textAreaWrapper .sm_toggleButtons .sm_htmlToggle.sm_selected, 
+             .sm_textEditor .sm_textAreaWrapper .sm_toggleButtons .sm_visualToggle.sm_selected { background-color: #333333; color: #FFFFFF; }
+
+    .sm_textEditor .sm_kitchenSink { margin-top: 10px; width: 100%; }
+        /* Text Editor Buttons */
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton { background-color: #FFFFFF; border: 2px solid #CCCCCC; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; cursor: pointer; background: url(../assets/modern/panels/textEditor/icons.png) no-repeat; background-repeat: no-repeat; width: 22px; height: 22px; float: left; margin-left: 2px; }
+        .sm_textEditor .sm_kitchenSink .sm_fontSelection select { height: 25px; width: 105px; float: left; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid #CCCCCC; }
+        .sm_textEditor .sm_kitchenSink .sm_fontSizeSelection select { height: 25px; width: 50px; float: left; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid #CCCCCC; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_selected { border: 2px solid #0066FF; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_bold_te { background-position: -0px -132px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_clean_te { background-position: -132px -99px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_copy_te { background-position: -132px -66px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_cut_te { background-position: -132px -33px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_dottedlist_te { background-position: -132px -0px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_format_te { background-position: -99px -99px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_hyperlink_te { background-position: -66px -99px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_image_te { background-position: -33px -99px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_indent_te { background-position: -0px -99px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_italic_te { background-position: -99px -66px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_justifycenter_te { background-position: -66px -66px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_justifyleft_te { background-position: -33px -66px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_justifyright_te { background-position: -0px -66px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_numberedlist_te { background-position: -99px -33px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_outdent_te { background-position: -66px -33px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_paste_te { background-position: -33px -33px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_print_te { background-position: -0px -33px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_quote_te { background-position: -99px -0px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_redo_te { background-position: -66px -0px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_underline_te { background-position: -33px -0px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_undo_te { background-position: -0px -0px; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_setcolor_te { background: none; background-color: #000000; }
+        .sm_textEditor .sm_kitchenSink .sm_textEditorButton.sm_setsrc_te { background-position: -33px -132px; }
+        .sm_textEditor .sm_kitchenSink .sm_alignButtons { margin-left: 15px; float: left; }
+
+.sm_textEditorPanel {  }
+    .sm_textEditorPanel.sm_simple { width: 250px; height: 295px; }
+    .sm_textEditorPanel.sm_advanced { width: 530px; }
+    .sm_textEditorPanel .sm_hideBackground { position: absolute; right: 85px; top: 11px; }
+    .sm_textEditorPanel .sm_squareCorners { position: absolute; right: 155px; top: 11px;  }
+      .sm_textEditorPanel .sm_squareCorners .sm_icon { background: url(../assets/shared/interface/squareCorner.png) ; margin-top: -4px; width: 20px; height: 20px; }
+    .sm_textEditorPanel .sm_cpSimpleLine { position: absolute; top: 5px; right: 50px; cursor: pointer; width: 25px; height: 25px; background-color: #000000; border: 2px solid #999999; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; z-index: 1; }
+    .sm_textEditorPanel .sm_cpSimpleFill { position: absolute; top: 5px; right: 20px; cursor: pointer; width: 25px; height: 25px; background-color: #000000; border: 2px solid #999999; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; z-index: 1; }
+     .sm_textEditorPanel .sm_markerIcon { position: absolute; top: 5px; right: 25px; width: 25px; height: 25px; border: 2px solid #CCCCCC; overflow: hidden; }
+    .sm_textEditorPanel .sm_markerIcon img { border: 0; width: 25px; height: 25px; }
+    .sm_textEditorPanel .sm_inserts { position: absolute; top: 67px; right: 12px;}
+    .sm_textEditorPanel .sm_inserts .sm_label { float: left; }
+    .sm_textEditorPanel .sm_inserts .sm_addButton { margin-right: 2px; width: 20px; height: 20px; float: left; cursor: pointer; background-image: url(../assets/shared/interface/addIcons.png?v2); }
+    .sm_textEditorPanel .sm_inserts .sm_addButton.sm_youTube { background-position: 0px;}
+    .sm_textEditorPanel .sm_inserts .sm_addButton.sm_image { background-position: -20px;}
+    .sm_textEditorPanel .sm_inserts .sm_addButton.sm_soundCloud { background-position: -40px; }
+    .sm_textEditorPanel .sm_inserts .sm_addButton.sm_urlLink { background-position: -60px; }
+    .sm_textEditorPanel .sm_latLng { margin-left: auto; margin-right: auto; width: 225px; clear: both; height: 45px; }
+    .sm_textEditorPanel .sm_latLng .sm_numberPicker { width: 110px; float: left; }
+    .sm_textEditorPanel.sm_advanced .sm_buttons { clear: none; }
+    .sm_textEditorPanel .sm_buttons { margin-left: auto; margin-right: auto; width: 158px; clear: both;  }
+        .sm_textEditorPanel .sm_buttons .sm_button {  width: 50px; margin-left: 2px; margin-right: 2px; margin-bottom: 2px; cursor: pointer; font-size: 12px; height: 10px; font-weight: bold; padding-top: 5px; text-align: center; float: left; }
+            .sm_textEditorPanel .sm_buttons .sm_button:active { background-image: linear-gradient(bottom, rgb(145,204,240) 0, rgb(206,229,244) 62%); background-image: -o-linear-gradient(bottom, rgb(145,204,240) 0, rgb(206,229,244) 62%); background-image: -moz-linear-gradient(bottom, rgb(145,204,240) 0, rgb(206,229,244) 62%); background-image: -webkit-linear-gradient(bottom, rgb(145,204,240) 0, rgb(206,229,244) 62%); background-image: -ms-linear-gradient(bottom, rgb(145,204,240) 0, rgb(206,229,244) 62%); background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(145,204,240)), color-stop(0.62, rgb(206,229,244)) ); }
+            .sm_textEditorPanel .sm_buttons .sm_button:hover { border: 1px solid #0099ff; }
+    .sm_textEditorPanel .sm_toggleMode { width: 100%; }
+        .sm_textEditorPanel .sm_toggleMode .sm_toggle { margin-left: auto; margin-right: auto; width: 120px; font-size: 12px; background: none; border: none; cursor: pointer; text-decoration: underline; font-weight: bold; color: #003333; text-align: center; padding: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; clear: both; }
+
+.sm_editor input { margin: 0px; padding: 0px; }
+
+.sm_textEditorPanel .sm_toggleMode .sm_toggle:hover { background-color: #99ccff; }
+.sm_textEditorPanel .sm_simpleTextEdit { height: 160px; width: 225px; padding-left: 10px; margin-top: 25px; cursor: pointer; }
+    .sm_textEditorPanel .sm_simpleTextEdit .sm_simpleTitleInput { width: 225px; height: 20px; border: 1px solid #CCCCCC; background-color: #FFFFFF; margin: 0px; padding: 0px; }
+    .sm_textEditorPanel .sm_simpleTextEdit .sm_simpleDescriptionInput { width: 225px; height: 100px; border: 1px solid #CCCCCC; background-color: #FFFFFF; overflow: hidden; }
+.sm_textEditorPanel .sm_advancedTextEdit { margin-left: 10px; margin-right: 10px; margin-top: 20px; }
+    .sm_textEditorPanel .sm_advancedTextEdit .sm_advancedTitleInput { width: 100%; height: 20px; border: 1px solid #CCCCCC; background-color: #FFFFFF; }
+.sm_textEditorPanel .sm_textEditorLabel { font-size: 12px; font-weight: bold; margin-top: 5px; color: #003333; width: 200px; }
+
+.sm_modal {position: absolute;width: 100%;height: 100%;overflow: hidden;top: 0;left: 0; background-image: url(../assets/modern/other/wbg_p75.png); }
+.sm_button { text-align: center; color: #333333; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; cursor: pointer; padding: 10px; background: #ffffff; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 2%, #cccccc 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#ffffff), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 2%,#cccccc 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 2%,#cccccc 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #ffffff 2%,#cccccc 100%); /* IE10+ */ background: linear-gradient(to bottom, #ffffff 2%,#cccccc 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */ font-size: 12px;  border: 1px solid #999999; }
+.sm_label { font-size: 12px; color: #333333; }
+.sm_button:hover { background: none; background-color: #CCCCCC; }
+
+.sm_radioButton { cursor: pointer; height: 25px;}
+.sm_radioButton .sm_input { background-image: url(../assets/shared/interface/radiosprite.png); width: 23px; height: 23px; float: left; margin-right: 5px; }
+.sm_radioButton .sm_input.sm_selected { background-position: -23px 0px;}
+.sm_radioButton .sm_label { font-size: 12px; padding-top: 4px; }
+.sm_radioButton.sm_disabled {cursor: auto;}
+.sm_radioButton.sm_disabled .sm_input{ background-position: -46px 0;}
+.sm_radioButton.sm_disabled .sm_label {cursor: default; color: #CCCCCC; }
+
+.sm_textArea { margin-bottom: 5px; position: relative; }
+    .sm_textArea .sm_label { font-size: 12px; }
+    .sm_textArea .sm_label.sm_notValid { color: #660000; }
+    .sm_textArea .sm_wrapper { width: 100%; position: absolute; top: 14px; bottom: 0px; border: 1px solid #999999; }
+    .sm_textArea .sm_wrapper.sm_notValid { border-color: #660000; }    
+    .sm_textArea .sm_wrapper textarea { color: #333333; resize: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; font-size: 12px; font-weight: bold;}
+
+.sm_helpIcon { width: 16px;height: 16px;position: absolute;background-image: url(../assets/shared/helpIcon.png);top: 0;right: 0;}
+
+.sm_textInput { margin-bottom: 5px; }
+.sm_textInput .sm_label { font-size: 12px; }
+.sm_textInput .sm_label.sm_notValid { color: #660000; }
+.sm_textInput .sm_wrapper { border: 1px solid #999999; width: 100%;position: relative; }
+.sm_textInput .sm_wrapper.sm_notValid { border-color: #660000; }
+.sm_textInput .sm_wrapper input {outline: none; height: 20px; width: 100%; font-size: 12px; color: #333333; font-weight: bold; font-size: 12px;height: 18px; border: none; }
+    .sm_textInput .sm_wrapper .sm_icon { position: absolute;right: 0;top: 0;width: 30px;height: 100%; }
+
+.sm_textInput .sm_icon.sm_valid { width: 20px;height: 20px;background: url(../assets/shared/interface/valid.png);margin-top: 1px; }
+.sm_textInput .sm_icon.sm_valid.sm_notValid { background-position: -20px 0; }
+
+.sm_scrollBox { position: relative; }
+.sm_scrollBox .sm_scrollBar { overflow: auto;position: absolute;right: 0;top: 0;bottom: 0px;width: 25px;z-index: 2; -webkit-overflow-scrolling: touch; }
+.sm_scrollBox .sm_content { z-index: 1;height: auto;}
+
+.sm_checkBox { white-space: nowrap; padding-left: 17px; position: relative; }
+.sm_checkBox .sm_label { width: auto; top: 0px; font-size: 12px; }
+.sm_checkBox input { position: absolute; left: 0px; top: 0px;}
+
+.sm_labelButton:hover { background: #CCCCCC; }
+.sm_close { background-image: url(../assets/modern/panels/close15x15.png); width: 15px; height: 15px; position: absolute; right: 4px; top: 4px; cursor: pointer; z-index: 100; }
+
+.sm_infoWindow .sm_close { top: 3px; right: 0px; }
+.sm_infoWindow { font-size: 12px; }
+    .sm_infoWindow .sm_editInfo { background-image: url(../assets/modern/ui/icon_edit.png); width: 31px; height: 31px; position: absolute; left: 0px; top: -14px; cursor: pointer; }
+    .sm_infoWindow .sm_infoWindowContent { font-size: 12px; color: #333333; }
+        .sm_infoWindow .sm_infoWindowContent .sm_label { margin: 10px; text-align: center; font-weight: bold;color: #333333; }
+        .sm_infoWindow .sm_infoWindowContent .sm_addPinButton { text-align: center; width: 100px; padding: 5px; font-weight: bold; margin-left: auto; margin-right: auto; color: #000066; text-decoration: underline; margin-bottom: 5px; cursor: pointer; }
+            .sm_infoWindow .sm_infoWindowContent .sm_addPinButton:hover { text-decoration: none; }
+
+.sm_debugLog { position: absolute; left: 0px; bottom: 25px; width: 100%; z-index: 15000; display: none; }
+    .sm_debugLog .sm_errorMsg {  width: 100%; background-color: #660000; color: #FFF; font-size: 12px; padding: 5px; height: 20px; overflow: hidden; position: relative; border: 1px solid #000; }
+        .sm_debugLog .sm_errorMsg .sm_closeError { font-weight: bold; margin: 5px; height: 20px; width: 30px; cursor: pointer; text-align: center; position: absolute; right: 0px; top: 0px; }
+
+.sm_gallery { left: 0px; right: 0px; top: 0px; bottom: 15px; position: absolute; background: url(../assets/shared/gallery/bbg_90p.png); }
+    .sm_gallery .sm_close { top: 10px; right: 10px; position: absolute; width: 31px; height: 31px; background: url(../assets/shared/gallery/close.png); }
+    .sm_gallery .sm_larrow { cursor: pointer; position: absolute; width: 45px; height: 93px; left: 10px; top: 50%; z-index: 1; margin-top: -91px; background: url(../assets/shared/gallery/larrow.png); }
+        .sm_gallery .sm_larrow:hover { background: url(../assets/shared/gallery/larrow2.png); }
+    .sm_gallery .sm_rarrow { cursor: pointer; position: absolute; width: 45px; height: 93px; right: 10px; top: 50%; z-index: 1; margin-top: -91px; background: url(../assets/shared/gallery/rarrow.png); }
+        .sm_gallery .sm_rarrow:hover { background: url(../assets/shared/gallery/rarrow2.png); }
+    .sm_gallery .sm_galleryDisplay { position: absolute; left: 0px; right: 0px; top: 00px; bottom: 90px; z-index: -1; }
+    .sm_gallery .sm_count { position: absolute; width: 250px; bottom: 3px; text-align: center; left: 50%; margin-left: -125px; color: #FFFFFF; font-size: 12px; height: 15px; }
+    .sm_gallery .sm_thumbnailWrapper { bottom: 0px; width: 100%; position: absolute; height: 90px; background-color: #000000; }
+        .sm_gallery .sm_thumbnailWrapper .sm_thumbnails { position: absolute; top: 10px; left: 50%; white-space: nowrap; }
+            .sm_gallery .sm_thumbnailWrapper .sm_thumbnails .sm_thumbnail { cursor: pointer; width: 54px; float: left; height: 54px; overflow: hidden; margin-right: 5px; border: solid 2px #333333; z-index: 1000; position: relative; display: inline-block; }
+
+.sm_editor .leaflet-control-attribution { background: none; background-color: transparent; box-shadow: none }
+
+.gm-style-cc a {
+    font-size: 10px;
+}
+
+@media (max-width: 850px) {
+    .sm_mapTypeControl .sm_mapTypeButton { text-transform: uppercase; float: left; cursor: pointer; color: #666666; font-size: 11px; white-space: nowrap; padding: 8px; border: 1px solid #999999; border-width: 1px 1px 1px 0px; background-color: #FFFFFF; background-image: url(../assets/modern/panels/bottom_bg.png); background-position: bottom; font-family: 'PT Sans', Arial, verdana;}
+    .sm_zoomControl { position: absolute; width: 30px; height: 75px; right: 10px; top: 10px; z-index: 3;  }
+    .sm_zoomControl .sm_zoomButton .sm_zoomIcon {background-image: url(../assets/modern/controls/plusminus_75p.png)}
+        .sm_zoomControl .sm_zoomButton.sm_plus .sm_zoomIcon { width: 12px; height: 12px; position: absolute; left: 50%; top: 50%; margin-left: -6px; margin-top: -6px; }
+            .sm_zoomControl .sm_zoomButton.sm_plus:hover .sm_zoomIcon { background-position: 0px -12px;  }
+        .sm_zoomControl .sm_zoomButton.sm_minus .sm_zoomIcon { width: 12px; height: 4px; position: absolute; left: 50%; top: 50%; margin-left: -6px; margin-top: -2px; background-position: 0 -24px; }
+            .sm_zoomControl .sm_zoomButton.sm_minus:hover .sm_zoomIcon { background-position: 0px -28px; }
+
+}
+
+@media (max-width: 450px) {
+    .sm_mapTypeControl .sm_mapTypeButton { float: left; text-transform: uppercase; cursor: pointer; color: #666666; font-size: 10px; white-space: nowrap; padding: 5px; border: 1px solid #999999; border-width: 1px 1px 1px 0px; background-color: #FFFFFF; background-image: url(../assets/modern/panels/bottom_bg.png); background-position: bottom; font-family: 'PT Sans', Arial, verdana;} 
+    .sm_zoomControl { position: absolute; width: 20px; height: 55px; right: 10px; top: 10px; z-index: 3;  }
+         .sm_zoomControl .sm_zoomButton .sm_zoomIcon {background-image: url(../assets/modern/controls/plusminus_75p.png)}
+        .sm_zoomControl .sm_zoomButton.sm_plus .sm_zoomIcon { width: 12px; height: 12px; position: absolute; left: 50%; top: 50%; margin-left: -6px; margin-top: -6px; }
+            .sm_zoomControl .sm_zoomButton.sm_plus:hover .sm_zoomIcon { background-position: 0px -12px;  }
+        .sm_zoomControl .sm_zoomButton.sm_minus .sm_zoomIcon { width: 12px; height: 4px; position: absolute; left: 50%; top: 50%; margin-left: -6px; margin-top: -2px; background-position: 0 -24px; }
+            .sm_zoomControl .sm_zoomButton.sm_minus:hover .sm_zoomIcon { background-position: 0px -28px; }
+}
+
+@media(max-width: 350px) {
+    .sm_mapTypeControl { left: 0px; width: 100%; text-align: center; }
+    .sm_mapTypeControl .sm_mapTypeButton { float: none; text-transform: uppercase; display: inline-block; cursor: pointer; color: #666666; font-size: 10px; white-space: nowrap; padding: 5px; border: 1px solid #999999; border-width: 1px 1px 1px 0px; background-color: #FFFFFF; background-image: url(../assets/modern/panels/bottom_bg.png); background-position: bottom; font-family: 'PT Sans', Arial, verdana;} 
+}
