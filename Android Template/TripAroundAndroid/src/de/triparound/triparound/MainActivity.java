@@ -1,6 +1,10 @@
 package de.triparound.triparound;
 
 import android.app.Activity;
+/*
+ * author: on 11/08/2015.
+ */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;

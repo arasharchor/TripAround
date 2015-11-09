@@ -1,6 +1,9 @@
 package de.triparound.triparound;
 
 import java.util.ArrayList;
+/*
+ * author: on 11/08/2015.
+ */
 
 import android.app.Activity;
 import android.content.Intent;

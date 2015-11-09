@@ -14,6 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/*
+ * author: on 11/08/2015.
+ */
+
 public class MakeTripActivity extends Activity implements View.OnClickListener{
 
 	@Override
