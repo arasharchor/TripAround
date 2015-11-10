@@ -32,5 +32,6 @@
     <string name="title_activity_make_trip">Make Trip Activity</string>
     <string name="title_activity_trip_results">Trip Results</string>
     <string name="title_activity_map_view">Map View</string>
+    <string name="title_activity_save_trip">Save A Trip</string>
 
 </resources>

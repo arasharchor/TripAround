@@ -16,7 +16,7 @@ import android.widget.TextView;
     public class TripListAdapter extends ArrayAdapter<ReviewData> {
         private static final String TAG = "TripListAdapter";
 
-        private static List<ReviewData> mReviewDataList;
+        private List<ReviewData> mReviewDataList;
         private Context mContext;
 
         public TripListAdapter(List<ReviewData> reviewDataList, Context context) {

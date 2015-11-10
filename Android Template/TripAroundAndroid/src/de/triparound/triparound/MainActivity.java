@@ -32,6 +32,20 @@ public class MainActivity extends Activity {
 				startActivity(toListIntent);
 	      }
 	    });
+	    
+		Button button2 = (Button) findViewById(R.id.savetripbutton);
+
+	    button2.setOnClickListener(new OnClickListener()
+	    {
+	      public void onClick(View v)
+	      {
+/*	    	  Toast.makeText(getApplicationContext(), "Button is clicked!", 
+	    			   Toast.LENGTH_LONG).show();*/
+	    	  Intent toListIntent = new Intent(MainActivity.this,
+	    			  SaveTripActivity.class);
+				startActivity(toListIntent);
+	      }
+	    });
 
 	}
 

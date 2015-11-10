@@ -34,6 +34,10 @@
             android:name=".ViewMapActivity"
             android:label="@string/title_activity_map_view" >
         </activity>
+        <activity
+            android:name=".SaveTripActivity"
+            android:label="@string/title_activity_save_trip" >
+        </activity>
     </application>
 
 </manifest>
